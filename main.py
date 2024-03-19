@@ -7,8 +7,8 @@ from datetime import datetime
 import logging
 from config import config
 
-async def main():
 
+async def main():
     bot = Bot(token=config.token.get_secret_value(), parse_mode='HTML')
     dp = Dispatcher()
     logging.basicConfig(
@@ -31,6 +31,8 @@ async def start_bot(message: Message, bot: Bot):
 
 
 key = config.key.get_secret_value()
+
+
 async def get_weather(message: Message, bot: Bot):
     try:
         city = message.text.lower()
